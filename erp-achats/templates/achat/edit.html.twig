@@ -6,6 +6,7 @@
 
 {% block body %}
     <h1>Modifier l'Achat</h1>
+    <a href="{{ path('app_achat_index') }}" class="btn btn-secondary mb-5">Retour à la liste</a>
 
     {{ form_start(form) }}
         {{ form_row(form.dateAchat) }}
@@ -14,5 +15,4 @@
         <button class="btn btn-primary">Mettre à jour</button>
     {{ form_end(form) }}
 
-    <a href="{{ path('app_achat_index') }}" class="btn btn-secondary">Retour à la liste</a>
 {% endblock %}
