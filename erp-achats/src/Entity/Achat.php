@@ -11,7 +11,7 @@ class Achat
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id_achat = null;
 
     #[ORM\Column(type: "date")]
     private ?\DateTimeInterface $dateAchat = null;
@@ -22,10 +22,13 @@ class Achat
     #[ORM\Column(type: "string", length: 100)]
     private ?string $fournisseur = null;
 
-    // Getter and Setter for $id
+    #[ORM\Column(type: "integer")]
+    private ?int $idStock = null;
+
+    // Getter and Setter for $id_achat
     public function getId(): ?int
     {
-        return $this->id;
+        return $this->id_achat;
     }
 
     // Getter and Setter for $dateAchat
@@ -63,4 +66,18 @@ class Achat
         $this->fournisseur = $fournisseur;
         return $this;
     }
+
+    public function getIdStock(): ?int
+    {
+        return $this->idStock;
+    }
+
+    // Setter pour idStock
+    public function setIdStock(int $idStock): self
+    {
+        $this->idStock = $idStock;
+
+        return $this;
+    }
+    
 }

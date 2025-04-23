@@ -1,0 +1,18 @@
+{# templates/achat/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Éditer l'Achat{% endblock %}
+
+{% block body %}
+    <h1>Modifier l'Achat</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.dateAchat) }}
+        {{ form_row(form.montant) }}
+        {{ form_row(form.fournisseur) }}
+        <button class="btn btn-primary">Mettre à jour</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_achat_index') }}" class="btn btn-secondary">Retour à la liste</a>
+{% endblock %}

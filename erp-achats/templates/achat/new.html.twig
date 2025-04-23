@@ -1,0 +1,19 @@
+{# templates/achat/new.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Achat{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouvel Achat</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.dateAchat) }}
+        {{ form_row(form.montant) }}
+        {{ form_row(form.fournisseur) }}
+        {{ form_row(form.id_stock) }}
+        <button class="btn btn-primary">Enregistrer</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_achat_index') }}" class="btn btn-secondary">Retour à la liste</a>
+{% endblock %}
